@@ -12,7 +12,7 @@ api = Api(application)
 class apipred(Resource):
      def post(self):
           data = request.get_json()
-          print(name)
+          print(data)
           name = data['name']
           name = name + "!!!"
           return name
