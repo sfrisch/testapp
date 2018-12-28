@@ -1,6 +1,5 @@
 from flask import Flask,render_template,request
 from flask_restful import Resource,Api
-import os
 
 application = Flask(__name__)
 api = Api(application)
@@ -16,11 +15,8 @@ class apipred(Resource):
           print(data)
           name = data['name']
           name = name + "!!!"
-          f = open('log.txt','a')          
-          print("Worker ID:" + str(os.getpid()),file=f)         
-          print(data,file=f)
-          print(name,file=f)
-          return name
+          
+return name
 
 api.add_resource(apipred,'/apipred/')
 
