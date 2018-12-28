@@ -15,6 +15,9 @@ class apipred(Resource):
           print(data)
           name = data['name']
           name = name + "!!!"
+          f = open('log.txt','a')          
+          print(data,file=f)
+          print(name,file=f)         
           return name
 
 api.add_resource(apipred,'/apipred/')
